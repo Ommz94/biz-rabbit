@@ -1,0 +1,6 @@
+{
+    "name": "omeashg/intel-biz",
+    "require": {
+        "kreait/firebase-php": "^5.19"
+    }
+}
