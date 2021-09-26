@@ -11,9 +11,11 @@ if(isset($_GET['q'])){
   $filters = count($filters) ? json_encode($filters) : '';
   $filters = str_replace('"', '\"', $filters);
 
+  $algorithm = isset($_GET['algorithm']) ? $_GET['algorithm'] : 'hamming';
+
   // Run python script
   // Desired format => python3 classifier.py service "{\"ai_category\":\"fraud detection system\"}"
-  exec('python3 ./scripts/classifier-hamming.py "'. $query.'" "'. $filters . '"', $searchResults);
+  exec('python3 ./scripts/classifier-' . $algorithm . '.py "'. $query.'" "'. $filters . '"', $searchResults);
 
   // If response from script is empty, abort
   if( !$searchResults || ! isset($searchResults[0]) || $searchResults[0] == 'no_results'){
@@ -99,7 +101,6 @@ function hasFiltersSet(){
           <div class="flex items-center flex-1">
             <div class="flex items-center justify-between w-full md:w-auto">
               <a href="/">
-                <span class="sr-only">Workflow</span>
                 <img class="h-8 w-auto sm:h-10" src="./dist/images/logo.svg" alt="">
               </a>
             </div>
@@ -136,6 +137,16 @@ function hasFiltersSet(){
                       <div>
                         <input type="text" name="q" value="<?php echo isset($_GET['q']) ? $_GET['q'] : '';?>" id="search" autocomplete="off" class="block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md">
                       </div>
+
+                      <?php //if(isset($_GET['dev']) && $_GET['dev'] == 'true') {?>
+                        <div>
+                          <label class="text-sm font-medium text-gray-700">Algorithm <span class="bg-green-500 font-bold inline-flex items-center justify-center leading-none mr-2 px-2 rounded-full text-red-100 text-white text-xs">Dev</span> </label>
+                          <select name="algorithm" class="block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md">
+                            <option value="hamming">Hamming</option>
+                            <option value="knn">KNN</option>
+                          </select>
+                        </div>
+                      <?php// } ?>
 
                       <div class="mt-2">
                         <a id="search-filters-trigger" href="javascript:void(0)" class="text-sm text-blue-700">Advanced filters</a>
