@@ -103,7 +103,7 @@ try:
 
       single_similarity = 0;
       for tag in tags:
-        single_similarity += textdistance.hamming.similarity(text, tag.strip())
+        single_similarity += textdistance.levenshtein.similarity(text, tag.strip())
         
       if single_similarity >= min_similarity:
         tagSimilarity.append((id, single_similarity))

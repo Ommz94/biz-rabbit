@@ -28,8 +28,8 @@ $company = $companyRef->getSnapshot()->getValue();
         <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
           <div class="flex items-center flex-1">
             <div class="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
-                <img class="h-8 w-auto sm:h-10" src="./dist/images/log.svg" alt="">
+              <a href="/">
+                <img class="h-8 w-auto sm:h-10" src="./dist/images/logo.svg" alt="">
               </a>
             </div>
           </div>
@@ -39,7 +39,7 @@ $company = $companyRef->getSnapshot()->getValue();
   </div>
 
   <div class="bg-gray-100">
-    <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8">
+    <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-10 sm:pb-24 lg:max-w-7xl lg:px-8">
 
       <!-- Page header -->
       <div class="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
@@ -327,7 +327,7 @@ $company = $companyRef->getSnapshot()->getValue();
                     </dd>
                 </div>
                 <?php if(isset($company['Countries ranking visits(JSON)']) && ! empty($company['Countries ranking visits(JSON)'])){ ?>
-                <div class="border-t pt-5">
+                <div class="border-t pt-5" id="chart-container">
                     <dt class="text-sm font-medium text-gray-500">
                         Countries' Visits Ranking:
                     </dt>
@@ -452,6 +452,8 @@ $company = $companyRef->getSnapshot()->getValue();
                   }
               }
           });
+      }else{
+        document.getElementById('chart-container').style.display = 'none';
       }
   </script>
 

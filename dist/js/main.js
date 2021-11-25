@@ -3,7 +3,7 @@ $(document).ready(function(){
   // Init typed.js
   if(window.Typed){
     var typed4 = new Typed('#search', {
-      strings: ['Online fashion store', 'Multi vendor market place', 'Customer service platform', 'Printing service'],
+      strings: ['Artificial Intelligence', 'Deep Learning', 'Fraud Detection', 'Drones', 'Prioritizing'],
       typeSpeed: 50,
       backSpeed: 40,
       attr: 'placeholder',

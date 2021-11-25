@@ -38,8 +38,6 @@ $aiCategories = [
   'Fake review detection' => 'Fake Review Detection',
   'fraud detection system' => 'Fraud Detection System ',
   'Natural Language Processing' => 'Natural Language Processing',
-  'Natural language processing' => 'Natural Language Processing',
-  'Natural language processing' => 'Natural Language Processing',
   'NLP and cognitive computing' => 'NLP And Cognitive Computing',
   'Pattern recognition' => 'Pattern Recognition',
   'Process Automation' => 'Process Automation',
@@ -79,7 +77,6 @@ function hasFiltersSet(){
 
   return false;
 }
-
 ?>
 
 <?php include('./partials/header.php');?>
@@ -119,7 +116,7 @@ function hasFiltersSet(){
                   <span class="text-indigo-400">business</span>
                 </h1>
                 <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua ad ad non deserunt sunt.
+                  To discover what audiences love, we measure across all channels and platforms⁠ - Catch the most important opportunities and accelerate growth.
                 </p>
               </div>
             </div>
@@ -142,8 +139,11 @@ function hasFiltersSet(){
                         <div>
                           <label class="text-sm font-medium text-gray-700">Algorithm <span class="bg-green-500 font-bold inline-flex items-center justify-center leading-none mr-2 px-2 rounded-full text-red-100 text-white text-xs">Dev</span> </label>
                           <select name="algorithm" class="block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md">
-                            <option value="hamming">Hamming</option>
-                            <option value="knn">KNN</option>
+                            <option value="hamming" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'hamming' ? 'selected' : '' ?>>Hamming</option>
+                            <option value="euclidean" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'euclidean' ? 'selected' : '' ?>>Euclidean</option>
+                            <option value="euclidean-beta" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'euclidean-beta' ? 'selected' : '' ?>>Euclidean(Beta)</option>
+                            <option value="levenshtein" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'levenshtein' ? 'selected' : '' ?>>Levenshtein</option>
+                            <option value="cosine-similarity" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'cosine-similarity' ? 'selected' : '' ?>>Cosine Similarity</option>
                           </select>
                         </div>
                       <?php// } ?>
