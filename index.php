@@ -142,8 +142,8 @@ function hasFiltersSet(){
                             <option value="hamming" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'hamming' ? 'selected' : '' ?>>Hamming</option>
                             <option value="euclidean" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'euclidean' ? 'selected' : '' ?>>Euclidean</option>
                             <option value="euclidean-beta" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'euclidean-beta' ? 'selected' : '' ?>>Euclidean(Beta)</option>
-                            <option value="levenshtein" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'levenshtein' ? 'selected' : '' ?>>Levenshtein</option>
-                            <option value="cosine-similarity" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'cosine-similarity' ? 'selected' : '' ?>>Cosine Similarity</option>
+                            <option value="levenshtein" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'levenshtein' ? 'selected' : '' ?>>Levenshtein(Beta)</option>
+                            <option value="cosine-similarity" <?php echo isset($_GET['algorithm']) && $_GET['algorithm'] == 'cosine-similarity' ? 'selected' : '' ?>>Cosine Similarity(Beta)</option>
                           </select>
                         </div>
                       <?php// } ?>
